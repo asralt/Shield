@@ -2,10 +2,10 @@
   "expo": {
     "name": "my-expo-app",
     "slug": "my-expo-app",
+    "scheme": "myexpoapp",
     "version": "1.0.0",
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
+    "icon": "./assets/icon.png",
+    "web": {},
     "experiments": {
       "tsconfigPaths": true
     },
@@ -13,23 +13,36 @@
       "expo-router"
     ],
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#001845"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.asraltenkhbadral.myexpoapp",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "This app needs access to the local network to scan for devices.",
+        "NSAppTransportSecurity": {
+          "NSAllowsLocalNetworking": true
+        },
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
+      "package": "com.asraltenkhbadral.myexpoapp",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#001845"
+      }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "792776b5-b737-4a1a-89e1-719c991a3056"
       }
     }
   }
